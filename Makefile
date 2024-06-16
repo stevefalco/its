@@ -111,9 +111,9 @@ all: its $(OUT)/stamp/test $(OUT)/stamp/emulators \
 	tools/supdup/supdup tools/cbridge/cbridge \
 	tools/chaosnet-tools/shutdown
 
-its: $(SMF) $(OUT)/stamp/its
+its: $(SMF) falco_patch $(OUT)/stamp/its
 
-download: $(SMF) $(OUT)/stamp/pdp10
+download: $(SMF) falco_patch $(OUT)/stamp/pdp10
 	$(WGET) $(IMAGES)/$(EMULATOR).tgz
 	$(TAR) xzf $(EMULATOR).tgz
 	$(MKDIR) $(OUT)/stamp
@@ -419,6 +419,9 @@ tools/chaosnet-tools/shutdown:
 $(SMF):
 	$(GIT) submodule sync --recursive `dirname $@`
 	$(GIT) submodule update --recursive --init `dirname $@`
+
+falco_patch:
+	patch -p1 < ./pdp6.patch
 
 tools/simh/BIN/pdp11:
 	$(MAKE) -C tools/simh pdp11
