@@ -23,4 +23,8 @@ proc mark_packs {} {
     mark_pack "1" "3" "3"
     mark_pack "2" "0" "0"
     mark_pack "3" "1" "1"
+    mark_pack "4" "4" "4"
+    mark_pack "5" "5" "5"
+    mark_pack "6" "6" "6"
+    mark_pack "7" "7" "7"
 }

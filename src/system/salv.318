@@ -115,7 +115,7 @@ PRINTX /Which machine? /
  IFCE MCHN,KA,[
 	SA==105*2000	; KA system is big, need to push SALV higher.
 	FIRSPK==0
-	LASTPK==3
+	LASTPK==7
 	NUDSL==500.
 	DC10P==0
 	RP10P==1
@@ -127,6 +127,8 @@ PRINTX /Which machine? /
 	TTLPTP==0
 	TCMXH==55.
 	LIGHTS==4	;PI
+	NDRIVE==8.
+	NUNITS==8.
 	];KA
  IFCE MCHN,HX,[
 	FIRSPK==0
