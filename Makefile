@@ -422,6 +422,7 @@ $(SMF):
 
 falco_patch:
 	patch -p1 < ./pdp6.patch
+	sed -i -e 's/egrep/grep -E/' tools/simh/sim_ether.c
 
 tools/simh/BIN/pdp11:
 	$(MAKE) -C tools/simh pdp11
