@@ -421,7 +421,7 @@ $(SMF):
 	$(GIT) submodule update --recursive --init `dirname $@`
 
 falco_patch:
-	patch -p1 < ./pdp6.patch
+	grep -q unistd.h tools/pdp6/emu/joy.c || patch -p1 < ./pdp6.patch
 	sed -i -e 's/egrep/grep -E/' tools/simh/sim_ether.c
 	sed -i -e 's/egrep/grep -E/' tools/sims/sim_ether.c
 
